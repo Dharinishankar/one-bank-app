@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-onebankcard-dev-122526-authRole",
+      "UnauthRoleArn": "arn:aws:iam::199993057062:role/amplify-onebankcard-dev-122526-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::199993057062:role/amplify-onebankcard-dev-122526-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-onebankcard-dev-122526-deployment",
+      "UnauthRoleName": "amplify-onebankcard-dev-122526-unauthRole",
+      "StackName": "amplify-onebankcard-dev-122526",
+      "StackId": "arn:aws:cloudformation:us-east-1:199993057062:stack/amplify-onebankcard-dev-122526/b9782490-b188-11ec-82b9-12c3f59ac62b",
+      "AmplifyAppId": "d2k6k86b43vnyz"
+    }
+  }
+}
