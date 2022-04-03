@@ -9,7 +9,22 @@
       "UnauthRoleName": "amplify-onebankcard-dev-122526-unauthRole",
       "StackName": "amplify-onebankcard-dev-122526",
       "StackId": "arn:aws:cloudformation:us-east-1:199993057062:stack/amplify-onebankcard-dev-122526/b9782490-b188-11ec-82b9-12c3f59ac62b",
-      "AmplifyAppId": "d2k6k86b43vnyz"
+      "AmplifyAppId": "d2k6k86b43vnyz",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-onebankcard-dev-122526-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "undefined": {},
+        "onebankcardf4ebd791": {},
+        "onebankcard9a5199a6": {},
+        "onebankcard0ca5f251": {}
+      },
+      "function": {
+        "WelcomeMessage": {
+          "deploymentBucketName": "amplify-onebankcard-dev-122526-deployment",
+          "s3Key": "amplify-builds/WelcomeMessage-616c30664872304d6c54-build.zip"
+        }
+      }
     }
   }
 }
