@@ -1,6 +1,6 @@
 {
   "auth": {
-    "onebankcard0ca5f251": {
+    "onebankcardd2d0bc8e": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -8,7 +8,8 @@
       "frontendAuthConfig": {
         "socialProviders": [],
         "usernameAttributes": [
-          "EMAIL"
+          "EMAIL",
+          "PHONE_NUMBER"
         ],
         "signupAttributes": [
           "EMAIL"
