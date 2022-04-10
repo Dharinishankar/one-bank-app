@@ -5,9 +5,14 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css'
 import { Auth } from 'aws-amplify';
 import awscofig  from './aws-exports';
-//import {Navbar}  from './components/Navbar';
+
  import Navbar from './components/Navbar';
- 
+ //to load images
+ import accountsImg from './images/accounts.JPG';
+ import oneCardImg from './images/OneCard.JPG'
+ import transferImg from'./images/transfer.JPG';
+ import surveyImg from './images/Surveys.JPG'
+
  import NavBarUser from './components/NavBarUser';
 import {Button}  from './components/Button';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
@@ -75,8 +80,8 @@ function App({ signOut, user}) {
             <figure  data-category='test'>
             <img
               className='cards__item__img'
-              alt='Travel Image'
-              src='images/accounts.jpg'
+              alt='accounts Image'
+              src={accountsImg}
             />
           </figure>
         
@@ -86,7 +91,7 @@ function App({ signOut, user}) {
             <img
               className='cards__item__img'
               alt='Travel Image'
-              src='images/OneCard.jpg'
+              src={oneCardImg}
             />
           </figure>
 
@@ -94,37 +99,17 @@ function App({ signOut, user}) {
             <img
               className='cards__item__img'
               alt='Travel Image'
-              src='images/transfer.jpg'
+              src={transferImg}
             />
           </figure>
            <img
               className='cards__item__img'
               alt='Travel Image'
-              src='images/Surveys.jpg'
+              src={surveyImg}
             />
           </figure>
 
-           {/* <h3>data {data} </h3>
-           <h4>ph : {user.attributes.phone_number}</h4>
-            <button k={signOut}>Sign out</button>
-            <h2>test3{user.attributes.email}</h2>
-           <h3>data {data} </h3>
-           <h4>ph : {user.attributes.phone_number}</h4>
-            <button k={signOut}>Sign out</button>
-            <h2>test3{user.attributes.email}</h2>
-           <h3>data {data} </h3>
-           <h4>ph : {user.attributes.phone_number}</h4>
-            <button k={signOut}>Sign out</button>
-            <h2>test3{user.attributes.email}</h2>
-           <h3>data {data} </h3>
-           <h4>ph : {user.attributes.phone_number}</h4>
-            <button k={signOut}>Sign out</button><h2>test3{user.attributes.email}</h2>
-           <h3>data {data} </h3>
-           <h4>ph : {user.attributes.phone_number}</h4> */}
-            {/* <button onClick={signOut}>Sign out</button> */}
-            <div>
-        {/* <Button primary onClick={() => parentToChild()}>Click Parent</Button> */}
-      </div>
+
             
             
             
