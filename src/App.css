@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  overflow-x: scroll; 
+  overflow-y: scroll; 
 }
 
 .App-logo {
@@ -34,5 +36,27 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.App {
+  @supports (display: grid) {
+    @media only screen and (min-width : 768px) {
+      width: 75%;
+      background-color: green;
+        overflow-x: scroll;
+        overflow-y: scroll;
+      
+    }
+  }
+}
+
+.App {
+  @supports (display: grid) {
+  @media only screen and (min-width : 992px) {
+    width: 50%;
+    background-color: pink;
+      overflow-x: scroll;
+      overflow-y: scroll;
+  }
   }
 }
