@@ -7,11 +7,8 @@ import { Auth } from 'aws-amplify';
 import awscofig  from './aws-exports';
 
  import Navbar from './components/Navbar';
- //to load images
- import accountsImg from './images/accounts.JPG';
- import oneCardImg from './images/OneCard.JPG'
- import transferImg from'./images/transfer.JPG';
- import surveyImg from './images/Surveys.JPG'
+ 
+ 
 
  import NavBarUser from './components/NavBarUser';
 import {Button}  from './components/Button';
@@ -20,7 +17,16 @@ import Home from './components/pages/Home';
  import './components/Button.css';
  import { useState } from 'react';
 import './App.css';
- Amplify.configure(awscofig);
+
+//to="/dashboard"
+ import {  Link } from "react-router-dom"; 
+ import Accounts from './components/pages/Accounts';
+ import OneCard from './components/pages/OneCard';
+ import Transfer from './components/pages/Transfer';
+
+Amplify.configure(awscofig);
+
+
 
  Auth.currentAuthenticatedUser({
     bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
@@ -66,54 +72,27 @@ function App({ signOut, user}) {
 
       <Router>
         <Navbar noClickMe={signOut} parentToChild={user}/>
+        <h1>Welcome {user.attributes.email}</h1> 
         {/* <NavBarUser/> */}
         {/* <Navbar/> */}
         <Routes>
-          <Route path='/' exact component=  {Home} />
+          
+//to passparam
+          {/* <Route path="/:id" exact element={<Home /> }/> */}
+          <Route path="/" exact element=  {<Home />} />
+          <Route path="/sign-up" exact element=  {<Home />} />
+          <Route exact path="/accounts" element={<Accounts />} />
+          <Route exact path="/oneCard" element={<OneCard />} />
+          <Route exact path="/transfer" element={<Transfer />} />
           </Routes>
-      </Router>
-
+          
          <div>
-            {/* <h1>Welcome  {user.username}</h1> */}
-           <h1>Welcome  {user.attributes.email}</h1>
-            
-            <figure  data-category='test'>
-            <img
-              className='cards__item__img'
-              alt='accounts Image'
-              src={accountsImg}
-            />
-          </figure>
-        
-          <figure  data-category='test'>
+         
            
-           <figure  data-category='test'>
-            <img
-              className='cards__item__img'
-              alt='Travel Image'
-              src={oneCardImg}
-            />
-          </figure>
-
-          <figure  data-category='test'>
-            <img
-              className='cards__item__img'
-              alt='Travel Image'
-              src={transferImg}
-            />
-          </figure>
-           <img
-              className='cards__item__img'
-              alt='Travel Image'
-              src={surveyImg}
-            />
-          </figure>
-
-
             
-            
-            
-          </div>
+
+    </div>
+      </Router>
 
     </div>
   );

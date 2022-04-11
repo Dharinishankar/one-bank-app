@@ -50,6 +50,12 @@ import './Navbar.css';
                </Link>
                
              </li>
+             <li>
+              <Link to='/' className='nav-links' >
+                Home
+                </Link>
+             </li>
+            
             
           </ul>
           {button && <Button buttonStyle='btn--outline' onClick={() => props.noClickMe()}>SIGN OUT</Button>}
