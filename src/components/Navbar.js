@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useContext} from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { ContextProvider,Context } from '../Context';
 
 // export const Navbar = (props)=> { 
   function Navbar(props) {
@@ -10,6 +11,10 @@ import './Navbar.css';
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const { email,setEmail } = useContext(Context);
+  const {mobile,setMobile}=useContext(Context);
+  const {lastLoginTime,setlastLoginTime}=useContext(Context)
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -21,6 +26,9 @@ import './Navbar.css';
 
   useEffect(() => {
     showButton();
+    setEmail(props.parentToChild.attributes.email);
+    setMobile(props.parentToChild.attributes.phone_number)
+
   }, []);
 
   window.addEventListener('resize', showButton);
@@ -55,7 +63,9 @@ import './Navbar.css';
                 Home
                 </Link>
              </li>
-            
+            <li  className='nav-item'>
+              <Link to='/' className='nav-links'> lastlogin {lastLoginTime}</Link>
+            </li>
             
           </ul>
           {button && <Button buttonStyle='btn--outline' onClick={() => props.noClickMe()}>SIGN OUT</Button>}

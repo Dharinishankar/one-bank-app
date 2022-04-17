@@ -10,13 +10,20 @@ import Accounts from './pages/Accounts';
  import oneCardImg from '../images/OneCard.JPG'
  import transferImg from '../images/transfer.JPG';
  import surveyImg from '../images/Surveys.JPG';
+
+ 
+import { useRef ,useContext} from 'react';
+import { Context } from "../Context";
  
 
-function Landingoptions() {
+function Landingoptions(props) {
+  const { custId, setCustId } = useContext(Context);
    
     return(
         <>
-        <Link to='/accounts'>
+        <h1>from landing {custId}</h1>
+        <Link to={`/accounts/${custId}`}>
+
           
 
   <figure  data-category='test'>
