@@ -88,7 +88,7 @@ const[mobile,setMobile]=useState(user.attributes.phone_number);
       <Router>
         <Navbar noClickMe={signOut} parentToChild={user}/>
         {/* <h1>Welcome {user.attributes.email} {custId}</h1>  */}
-        <h1>Welcome {user.attributes.email} </h1> 
+        {/* <h1>Welcome {user.attributes.email} </h1>  */}
         {/* <NavBarUser/> */}
         {/* <Navbar/> */}
         <Routes>

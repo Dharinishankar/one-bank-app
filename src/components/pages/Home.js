@@ -6,8 +6,9 @@ import Footer from '../Footer';
 import Landingoptions from '../Landingoptions';
 import { useLocation,  useParams} from "react-router-dom";
 
-import { useState,useRef ,useContext} from 'react';
+import { useState,useRef ,useContext,useEffect} from 'react';
 import { Context } from "../../Context";
+import '../Onebank.css';
 
 function Home(){
      const { id } = useParams();
@@ -15,14 +16,21 @@ function Home(){
      const { email,setEmail } = useContext(Context);
      const {mobile,setMobile}=useContext(Context);
      const {lastLoginTime,setlastLoginTime}=useContext(Context);
-     React.useEffect(() => {
-    console.log('hii');
+     const [firstName,setFirstname]=useState();
+     
+     useEffect(() => {
+       if(mobile){
+          console.log('hii1111111111111111');
      console.log('before');
-setTimeout(addBlog,10000); // run donothing after 0.5 seconds
+addBlog();// run donothing after 0.5 seconds
 console.log('after');
 
-     });
+       }
+   
+
+     },[mobile,email]);
      function addBlog() {
+       alert("hi5!!!!!!!!!!!! addBlog1111")
 
      
 console.log({mobile});
@@ -61,20 +69,23 @@ console.log({mobile});
     //updateCustId(logvar[0].custid);
     setCustId(logvar[0].custid);
     setlastLoginTime(logvar[0].lastlogin);
+    setFirstname(logvar[0].fname);
 
   });}
   
 
   return(
     <>
-   <h1> from home {custId}000000000000{email}----{mobile}</h1> 
+   {/* <h1> from home {custId}000000000000{email}----{mobile}</h1>  */}
 
     {/* tpopass param */}
     {/* const { search } = useLocation();
   const query = new URLSearchParams(search);
     const Id = query.get("Id")
     <h1>Welcome {Id.attributes.email}</h1> */}
-    {id}
+    {/* {id} */}
+ <h1>Welcome {firstName}</h1>
+<h3>Your last login was {lastLoginTime}</h3>
      <Landingoptions/>
     </>
   

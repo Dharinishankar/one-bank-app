@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { ContextProvider,Context } from '../Context';
 
+import logoutImg from '../images/logout.JPG';
+
 // export const Navbar = (props)=> { 
   function Navbar(props) {
   const [click, setClick] = useState(false);
@@ -45,8 +47,8 @@ import { ContextProvider,Context } from '../Context';
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              {/* test{props.parentToChild} */}
+            {/* <li className='nav-item'>
+              
               <Link to='/' className='nav-links' >
               {props.parentToChild.attributes.email} 
               </Link>
@@ -57,18 +59,23 @@ import { ContextProvider,Context } from '../Context';
                  {props.parentToChild.attributes.phone_number}
                </Link>
                
-             </li>
+             </li> */}
              <li>
               <Link to='/' className='nav-links' >
                 Home
                 </Link>
              </li>
-            <li  className='nav-item'>
-              <Link to='/' className='nav-links'> lastlogin {lastLoginTime}</Link>
-            </li>
+            {/* <li  className='nav-item'>
+              <Link to='/' className='nav-links'> Last Login {lastLoginTime}</Link>
+            </li> */}
             
           </ul>
-          {button && <Button buttonStyle='btn--outline' onClick={() => props.noClickMe()}>SIGN OUT</Button>}
+          {button && <Button buttonStyle='btn--outline' onClick={() => props.noClickMe()}> <img
+              className='cards__item__img'
+              alt='logout Image'
+              src={logoutImg}
+            >  
+            </img></Button>}
         </div>
       </nav>
     </>

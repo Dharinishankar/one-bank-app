@@ -21,7 +21,7 @@ function Landingoptions(props) {
    
     return(
         <>
-        <h1>from landing {custId}</h1>
+        {/* <h1>from landing {custId}</h1> */}
         <Link to={`/accounts/${custId}`}>
 
           
